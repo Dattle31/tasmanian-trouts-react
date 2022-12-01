@@ -1,38 +1,358 @@
 .App {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h3 {
+  Color: #994D00;
+  Font-style: Bold;
+}
+
+/* Container for grid layout */
+.Main {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat (7, minmax(0, 1fr));
+  grid-template-rows: repeat (4, minmax(0, 1fr));
+  grid-gap: 0px;
+  width: 99vw;
+  height: 99vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Start of components for grid layout */
+.Welcome {
+grid-column: 1/8;
+grid-row: 1/2;
+
+background-color: #e67400;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.News {
+  grid-column: 1/2;
+  grid-row: 2/5;
+
+  background-color: #fff;
+  font:  solid black;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul.NewsList {
+  list-style-type: square;
+  list-style-position: outside;
+
+}
+
+.LatestNews {
+  grid-column: 1/2;
+  grid-row: 3/5;
+
+  background-color: #fff;
+}
+
+.LatestNews {
+  overflow: auto;
+}
+
+.NextGames {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  max-height: 100%;
+
+  background-color: #fff;
+
+
+}
+
+.OtherScores {
+  grid-column: 4/6;
+  grid-row: 2/3;
+
+  background-color: #fff;
+
+
+}
+
+.Photo1 {
+  grid-column: 2/4;
+  grid-row:3/4;
+
+  overflow:visible;
+
+}
+
+
+.Photo2 {
+  grid-column: 4/6;
+  grid-row: 3/4;
+
+
+
+}
+
+.Stats {
+  grid-column: 2/4;
+  grid-row: 4/5;
+  overflow-y:auto;
+
+  background-color: #fff;
+
+}
+
+.Highlights {
+  grid-column: 4/6;
+  grid-row: 4/5;
+
+  background-color: #fff;
+
+
+}
+
+.Ladder {
+  grid-column: 6/7;
+  grid-row: 2/5;
+
+  background-color: #fff;
+}
+
+.Radar {
+  grid-column: 7/8;
+  grid-row: 2/4;
+
+  background-color: #fff;
+
+}
+
+.Contact {
+  grid-column: 7/8;
+  grid-row: 4/5;
+
+  background-color: #e67400;
+
+}
+
+a {
+  text-decoration: none;
+  color: #e67400;
+}
+a:visited {
+	color: #19C9FF;
+}
+a:hover {
+	color: #00afe6;
+}
+a:focus {
+	color: #AAFFFF;
+}
+a:active {
+	color: #00FFFF;
+}
+
+/* Navigation styling */
+.Navigation {
+  color: #d3d3d3;
+  background-color: #007599;
+  width: 100%;
+  padding: 15px;
+  align-items: middle;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+ul.NavigationMenus {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  padding: 0;
+}
+
+ul.NavigationMenus li {
+  list-style: none;
+  margin-right: 30px;
+}
+
+ul.NavigationMenus li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+ul.NavigationMenus li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #fff;
+  height: 1px;
+  width: 0%;
+  bottom: 0;
+  transition: 0.3s;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+}
+
+ul.NavigationMenus li a:hover:after{
+  width: 100%;
+  transition: 0.3s;
+}
+
+.activeNavItem a:after{
+  content: "";
+  display: block;
+  position: absolute;
+  background: #fff;
+  height: 1px;
+  width: 100% !important;
+  bottom: 0;
+  transition: 0.3s;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  color:#19C9FF !important;
+}
+
+li.activeNavItem a:after{
+  background: #e67400!important;
+}
+
+.Welcome {
+  text-align: center;
+}
+
+.Footer { grid-area: Footer;
+  display: grid;
+  grid-column: 1 / 8;
+  grid-row: 7;
+
+}
+
+.Administrator {
+  text-align: center;
+}
+
+
+/* Styling for Tables */
+Table {
+  border: 1px solid black;
+  width: 99%;
+  height: 90%;
+  
+}
+
+Th {
+  border: 1px solid black;
+}
+
+Td {
+  border: 1px solid black;
+}
+
+
+.OtherScores {
+overflow: hidden;
+}
+
+.NextGames {
+  overflow: hidden;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.carouselItem {
+  display: inline-flex;
+  align-items:center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 125px;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.indicators {
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.indicators > button {
+  margin: 5px;
+}
+
+.indicators > button.active {
+  background-color: green;
+  color: #fff;
+}
+
+/* Styling for Footer */
+
+.Footer {
+  color: #d3d3d3;
+  background-color: #007599;
+  width: 100%;
+  padding: 5px;
+  margin-top: 0.5rem;
+  align-items: middle;
+  top: 0;
+  z-index: 999;
+}
+
+ul.FooterMenus {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+ul.FooterMenus li {
+  list-style: none;
+  margin-right: 30px;
+}
+
+ul.FooterMenus li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+ul.FooterMenus li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #fff;
+  height: 1px;
+  width: 0%;
+  bottom: 0;
+  transition: 0.3s;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+}
+
+ul.FooterMenus li a:hover:after{
+  width: 100%;
+  transition: 0.3s;
+}
+
+.activeFooterItem a:after{
+  content: "";
+  display: block;
+  position: absolute;
+  background: #fff;
+  height: 1px;
+  width: 100% !important;
+  bottom: 0;
+  transition: 0.3s;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  color:#19C9FF !important;
+}
+
+li.activeFooterItem a:after{
+  background: #e67400!important;
 }
