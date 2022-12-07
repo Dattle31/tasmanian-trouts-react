@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Dattles31/github.io/tasmanian-trouts-react",
+  "homepage": "https://Dattle31/github.io/tasmanian-trouts-react",
   "name": "tasmanian-trouts-react",
   "version": "0.1.0",
   "private": true,
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deply": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
